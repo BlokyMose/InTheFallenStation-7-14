@@ -26,7 +26,68 @@
 
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 
-    <title><%= htmlWebpackPlugin.options.gameName %></title>
+    <!-- <title><%= htmlWebpackPlugin.options.gameName %></title> -->
+    <title>In The Fallen Station</title>
+    <!-- <link rel="stylesheet" href="./scripts/css/resetstyle.css"> -->
+    <style>
+        #indexDivHealth{
+            height: auto;
+            margin: 615px 15px 0px 15px;
+            /* float: left; */
+            /* flex-grow: 1; */
+
+        }
+        #indexDivHealth p{
+            color: silver; 
+            width: 200px;
+            font-size: 20px;
+            line-height: 25px;
+            text-align: right;
+            white-space: pre;
+            font-family: Cochin,Georgia,Cambria,Times, 'Times New Roman', serif;
+
+        }
+        #indexPlayerHealth{
+            color: white; 
+
+        }
+        /* #indexCynthiaHealth{
+        }
+        #indexLotHealth{
+        }
+ */
+        #indexNotes{
+            color: gainsboro; 
+            width: 200px;
+            /* height: 600px; */
+            height: inherit;
+            margin: 75px 15px 0px 12px;
+            float: left;
+            text-align: left;
+            white-space: pre-wrap;
+            font-family: Cochin,Georgia,Cambria,Times, 'Times New Roman', serif;
+        }
+
+        #indexNotes-h1{
+            font-size: 25px;
+            line-height: 30px;
+            margin: 0;
+            padding: 0;
+        }
+        #indexNotes-p{
+            font-size: 17px;
+            line-height: 30px;
+            margin: 0;
+            padding: 0;
+        }
+        #myGame{
+            width: 800px;
+            float: left;
+            margin: 75px 0px 0px 0px;
+            float: left;
+        }
+
+    </style>
     <style>
       html,
       body {
@@ -47,7 +108,23 @@
       }
     </script> -->
   </head>
-  <body>
-    <div id="phaser-game"></div>
-  </body>
+    <body style="background-color: rgba(10,10,10,1); display: flex; justify-content: center;">
+      <div id="indexDivHealth">
+          <p id="indexPlayerHealth">Loading Player</p>
+          <p id="indexCynthiaHealth">Loading Cynthia</p>
+          <p id="indexLotHealth">Loading Lot</p>    
+      </div>
+  
+  
+      <div id='myGame'></div>
+  
+          <!-- <script src="./lib/phaser.js"></script> -->
+          <!-- <script src="./src/main.js"></script> -->
+          
+      <div id="indexNotes">
+          <h1 id="indexNotes-h1">Loading index notes title</h1>
+          <p id="indexNotes-p">Loading index notes p</p>
+      </div>
+      
+  </body>  
 </html>

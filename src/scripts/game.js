@@ -1,31 +1,48 @@
 import 'phaser'
 import '@babel/polyfill'
 
-import MainScene from './scenes/mainScene'
-import PreloadScene from './scenes/preloadScene'
+// import MainScene from './scenes/mainScene'
+// import PreloadScene from './scenes/preloadScene'
+import { SOpening } from "./scenes/SOpening";
+import { STestGround } from "./scenes/STestGround";
+import { SWareHouse } from "./scenes/SWareHouse";
+import { SPentapolis } from "./scenes/SPentapolis";
+import UIPlay from "./UI/UIPlay";
+import UIPlay2 from "./UI/UIPlay2";
+import { STestGround2 } from "./scenes/STestGround2";
+import CanvasDialogue from "./Chat/CanvasDialogue";
 
-const DEFAULT_WIDTH = 1280
-const DEFAULT_HEIGHT = 720
-
-const config = {
+var config = {
   type: Phaser.AUTO,
-  backgroundColor: '#ffffff',
-  scale: {
-    parent: 'phaser-game',
-    mode: Phaser.Scale.FIT,
-    autoCenter: Phaser.Scale.CENTER_BOTH,
-    width: DEFAULT_WIDTH,
-    height: DEFAULT_HEIGHT
+  width:800,
+  height:600,
+  pixelArt: true,
+  scale:{ 
+      parent:'myGame',
+      // autoCenter:Phaser.Scale.CENTER_BOTH
   },
-  scene: [PreloadScene, MainScene],
-  physics: {
-    default: 'arcade',
-    arcade: {
-      debug: false,
-      gravity: { y: 400 }
-    }
-  }
-}
+  physics:{
+      default: 'matter',
+      matter:{
+          gravity:{y:0.4},
+          debug:false
+      }
+  },
+  scene:[
+      SPentapolis,
+      UIPlay2,
+      STestGround2,
+      CanvasDialogue,
+
+      //======================
+      SWareHouse,
+      UIPlay,
+      // STestGround,
+      SOpening, 
+
+  ]
+};
+
 
 window.addEventListener('load', () => {
   const game = new Phaser.Game(config)
